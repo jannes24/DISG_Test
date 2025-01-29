@@ -6,36 +6,37 @@ body {
     padding: 0;
 }
 
-/* Stile für die Container und Formulare */
 .container {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 0 auto;
+    width: 80%;
+    margin: 50px auto;
+    background-color: #34495e;
     padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Hintergrund für den Header */
 h1 {
     text-align: center;
-    color: #003366;
+    margin-bottom: 30px;
 }
 
-/* Hervorheben der besten Antwort */
-input[name$="_best"]:checked {
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
+.question {
+    margin-bottom: 20px;
 }
 
-/* Hervorheben der schlechtesten Antwort */
-input[name$="_worst"]:checked {
-    background-color: #f44336;
-    color: white;
-    border-radius: 5px;
+.options {
+    display: flex;
+    flex-direction: column;
 }
 
+label {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
 
 .submit-btn {
     background-color: #2980b9;
