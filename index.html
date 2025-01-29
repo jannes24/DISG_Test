@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DISG Fragebogen</title>
+    <title>DISG Persönlichkeitsfragebogen</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,9 +14,9 @@
             Sie müssen genau zwei Antworten pro Frage auswählen, um fortzufahren.
         </p>
         <form id="disg-form">
-            
-            <div class="question">
-                <p>1. Wie reagieren Sie, wenn Sie vor einer Herausforderung stehen?</p>
+            <!-- Frage 1 -->
+            <div class="question-card">
+                <p class="question-text">1. Wie reagieren Sie, wenn Sie vor einer Herausforderung stehen?</p>
                 <div class="options">
                     <label>Am meisten zutreffend:
                         <select name="q1-most">
@@ -37,8 +37,9 @@
                 </div>
             </div>
 
-            <div class="question">
-                <p>2. Wie gehen Sie mit Veränderungen in Ihrem Arbeitsumfeld um?</p>
+            <!-- Frage 2 -->
+            <div class="question-card">
+                <p class="question-text">2. Wie gehen Sie mit Veränderungen in Ihrem Arbeitsumfeld um?</p>
                 <div class="options">
                     <label>Am meisten zutreffend:
                         <select name="q2-most">
@@ -59,8 +60,9 @@
                 </div>
             </div>
 
-            <div class="question">
-                <p>3. Wie würden Sie sich in einer Gruppe beschreiben?</p>
+            <!-- Frage 3 -->
+            <div class="question-card">
+                <p class="question-text">3. Wie würden Sie sich in einer Gruppe beschreiben?</p>
                 <div class="options">
                     <label>Am meisten zutreffend:
                         <select name="q3-most">
@@ -81,8 +83,9 @@
                 </div>
             </div>
 
-            <div class="question">
-                <p>4. Was ist Ihnen bei der Arbeit am wichtigsten?</p>
+            <!-- Frage 4 -->
+            <div class="question-card">
+                <p class="question-text">4. Was ist Ihnen bei der Arbeit am wichtigsten?</p>
                 <div class="options">
                     <label>Am meisten zutreffend:
                         <select name="q4-most">
@@ -103,8 +106,9 @@
                 </div>
             </div>
 
-            <div class="question">
-                <p>5. Wie gehen Sie mit Stress um?</p>
+            <!-- Frage 5 -->
+            <div class="question-card">
+                <p class="question-text">5. Wie gehen Sie mit Stress um?</p>
                 <div class="options">
                     <label>Am meisten zutreffend:
                         <select name="q5-most">
@@ -124,7 +128,7 @@
                     </label>
                 </div>
             </div>
-            
+
             <button type="submit" class="submit-btn">Ergebnisse berechnen</button>
         </form>
         <div id="result" class="result"></div>
