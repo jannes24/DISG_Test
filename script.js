@@ -2,24 +2,33 @@ document.getElementById("disg-form").addEventListener("submit", function(event) 
     event.preventDefault();
     
     let results = { D: 0, I: 0, S: 0, G: 0 };
+    let allQuestionsValid = true;
 
-    // Loop over each question and collect selected values
+    // Loop durch jede Frage und überprüfe die Antworten
     for (let i = 1; i <= 5; i++) {
-        let selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
-        if (selectedOption) {
-            let value = selectedOption.value;
-            if (value.includes("max")) {
-                results[value.charAt(0)] += 2;
-            } else if (value.includes("min")) {
-                results[value.charAt(0)] += 1;
-            }
+        let selectedOptions = document.querySelectorAll(`input[name="q${i}"]:checked`);
+        
+        // Sicherstellen, dass genau 2 Antworten ausgewählt wurden
+        if (selectedOptions.length !== 2) {
+            allQuestionsValid = false;
+            break;
         }
+
+        // Eine Antwort wird mit +2 (am meisten) und eine mit +1 (am wenigsten) gewichtet
+        results[selectedOptions[0].value] += 2;
+        results[selectedOptions[1].value] += 1;
     }
 
-    // Display the results
-    let resultText = `Dein Dominanter Typ ist: ${
-        Object.keys(results).reduce((a, b) => results[a] > results[b] ? a : b)
-    }`;
+    if (!allQuestionsValid) {
+        alert("Bitte wählen Sie für jede Frage genau eine Antwort, die am meisten, und eine, die am wenigsten zutrifft.");
+        return;
+    }
 
-    document.getElementById("result").innerHTML = resultText;
+    // Berechnung des höchsten Typs
+    let dominantType = Object.keys(results).reduce((a, b) => results[a] > results[b] ? a : b);
+
+    let typeNames = { D: "Dominant", I: "Initiativ", S: "Stetig", G: "Gewissenhaft" };
+
+    document.getElementById("result").innerHTML = `Dein dominanter Typ ist: <strong>${typeNames[dominantType]}</strong>`;
 });
+
