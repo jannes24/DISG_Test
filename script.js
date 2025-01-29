@@ -1,34 +1,42 @@
-document.getElementById("disg-form").addEventListener("submit", function(event) {
+document.getElementById("testForm").addEventListener("submit", function(event) {
     event.preventDefault();
-    
-    let results = { D: 0, I: 0, S: 0, G: 0 };
-    let allQuestionsValid = true;
 
-    // Loop durch jede Frage und überprüfe die Antworten
-    for (let i = 1; i <= 5; i++) {
-        let selectedOptions = document.querySelectorAll(`input[name="q${i}"]:checked`);
+    // Initialisiere Zähler für jeden Typ
+    let scores = { D: 0, I: 0, S: 0, G: 0 };
+
+    // Funktion zur Auswertung jedes Items
+    function evaluateItem(itemBestName, itemWorstName) {
+        let itemBest = document.querySelector(`input[name="${itemBestName}"]:checked`);
+        let itemWorst = document.querySelector(`input[name="${itemWorstName}"]:checked`);
         
-        // Sicherstellen, dass genau 2 Antworten ausgewählt wurden
-        if (selectedOptions.length !== 2) {
-            allQuestionsValid = false;
-            break;
+        // Punktvergabe für die beste Antwort
+        if (itemBest) {
+            if (itemBest.value === "D") scores.D += 5;
+            if (itemBest.value === "I") scores.I += 5;
+            if (itemBest.value === "S") scores.S += 5;
+            if (itemBest.value === "G") scores.G += 5;
         }
 
-        // Eine Antwort wird mit +2 (am meisten) und eine mit +1 (am wenigsten) gewichtet
-        results[selectedOptions[0].value] += 2;
-        results[selectedOptions[1].value] += 1;
+        // Punktvergabe für die schlechteste Antwort
+        if (itemWorst) {
+            if (itemWorst.value === "D") scores.D -= 5;
+            if (itemWorst.value === "I") scores.I -= 5;
+            if (itemWorst.value === "S") scores.S -= 5;
+            if (itemWorst.value === "G") scores.G -= 5;
+        }
     }
 
-    if (!allQuestionsValid) {
-        alert("Bitte wählen Sie für jede Frage genau eine Antwort, die am meisten, und eine, die am wenigsten zutrifft.");
-        return;
-    }
+    // Bewertung der 5 Items
+    evaluateItem("item1_best", "item1_worst");
+    evaluateItem("item2_best", "item2_worst");
+    evaluateItem("item3_best", "item3_worst");
+    evaluateItem("item4_best", "item4_worst");
+    evaluateItem("item5_best", "item5_worst");
 
-    // Berechnung des höchsten Typs
-    let dominantType = Object.keys(results).reduce((a, b) => results[a] > results[b] ? a : b);
+    // Berechnung des höchsten Scores
+    let maxScore = Math.max(scores.D, scores.I, scores.S, scores.G);
+    let resultType = Object.keys(scores).find(key => scores[key] === maxScore);
 
-    let typeNames = { D: "Dominant", I: "Initiativ", S: "Stetig", G: "Gewissenhaft" };
-
-    document.getElementById("result").innerHTML = `Dein dominanter Typ ist: <strong>${typeNames[dominantType]}</strong>`;
+    // Ausgabe des Ergebnisses
+    alert("Dein DISG-Typ ist: " + resultType);
 });
-
