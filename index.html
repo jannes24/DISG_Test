@@ -1,104 +1,75 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DISG Test</title>
-    <link rel="stylesheet" href="style.css">
+    <title>DISG Fragebogen</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>DISG Persönlichkeits-Test</h1>
-        <p>Wählen Sie für jede Frage die Antwort, die am meisten und am wenigsten zutrifft.</p>
-
-        <form id="testForm">
-            <!-- Item 1 -->
-            <div class="item">
-                <p>1. Wie würden Sie sich selbst beschreiben?</p>
-                <label>
-                    <input type="radio" name="item1_best" value="D"> Dominant (am meisten zutreffend)
-                </label>
-                <label>
-                    <input type="radio" name="item1_worst" value="I"> Initiativ (am wenigsten zutreffend)
-                </label>
-                <label>
-                    <input type="radio" name="item1_best" value="S"> Stetig
-                </label>
-                <label>
-                    <input type="radio" name="item1_worst" value="G"> Gewissenhaft (am wenigsten zutreffend)
-                </label>
+        <h1>DISG Persönlichkeitsfragebogen</h1>
+        <p class="instruction">
+            Wählen Sie für jede Frage **eine Antwort, die am meisten** und **eine Antwort, die am wenigsten** zutrifft.
+            Sie müssen genau zwei Antworten pro Frage auswählen, um fortzufahren.
+        </p>
+        <form id="disg-form">
+            
+            <div class="question">
+                <p>1. Wie reagieren Sie, wenn Sie vor einer Herausforderung stehen?</p>
+                <div class="options">
+                    <label><input type="checkbox" name="q1" value="D">Ich übernehme die Führung und treffe schnell Entscheidungen.</label>
+                    <label><input type="checkbox" name="q1" value="S">Ich nehme mir Zeit und denke über die möglichen Risiken nach.</label>
+                    <label><input type="checkbox" name="q1" value="I">Ich versuche, mein Team zu motivieren und Ideen auszutauschen.</label>
+                    <label><input type="checkbox" name="q1" value="G">Ich analysiere die Situation detailliert und erarbeite einen genauen Plan.</label>
+                </div>
             </div>
 
-            <!-- Item 2 -->
-            <div class="item">
-                <p>2. Wie reagieren Sie, wenn Sie mit einer Herausforderung konfrontiert werden?</p>
-                <label>
-                    <input type="radio" name="item2_best" value="D"> Dominant (am meisten zutreffend)
-                </label>
-                <label>
-                    <input type="radio" name="item2_worst" value="I"> Initiativ (am wenigsten zutreffend)
-                </label>
-                <label>
-                    <input type="radio" name="item2_best" value="S"> Stetig
-                </label>
-                <label>
-                    <input type="radio" name="item2_worst" value="G"> Gewissenhaft (am wenigsten zutreffend)
-                </label>
+            <div class="question">
+                <p>2. Wie gehen Sie mit Veränderungen in Ihrem Arbeitsumfeld um?</p>
+                <div class="options">
+                    <label><input type="checkbox" name="q2" value="I">Ich freue mich auf die neuen Möglichkeiten und Herausforderungen.</label>
+                    <label><input type="checkbox" name="q2" value="G">Ich bevorzuge es, wenn alles planbar und stabil bleibt.</label>
+                    <label><input type="checkbox" name="q2" value="D">Ich nehme Veränderungen direkt in Angriff und versuche, sie zu gestalten.</label>
+                    <label><input type="checkbox" name="q2" value="S">Ich brauche Zeit, um mich an die Veränderung anzupassen.</label>
+                </div>
             </div>
 
-            <!-- Item 3 -->
-            <div class="item">
-                <p>3. Wie gehen Sie bei der Arbeit mit anderen Menschen um?</p>
-                <label>
-                    <input type="radio" name="item3_best" value="D"> Dominant (am meisten zutreffend)
-                </label>
-                <label>
-                    <input type="radio" name="item3_worst" value="I"> Initiativ (am wenigsten zutreffend)
-                </label>
-                <label>
-                    <input type="radio" name="item3_best" value="S"> Stetig
-                </label>
-                <label>
-                    <input type="radio" name="item3_worst" value="G"> Gewissenhaft (am wenigsten zutreffend)
-                </label>
+            <div class="question">
+                <p>3. Wie würden Sie sich in einer Gruppe beschreiben?</p>
+                <div class="options">
+                    <label><input type="checkbox" name="q3" value="S">Ich bin ruhig und unterstütze andere gern.</label>
+                    <label><input type="checkbox" name="q3" value="I">Ich bin eher zurückhaltend und höre gerne zu.</label>
+                    <label><input type="checkbox" name="q3" value="D">Ich bin eher der Denker und überlasse die Führung anderen.</label>
+                    <label><input type="checkbox" name="q3" value="G">Ich bringe Struktur und Ordnung in die Gruppe.</label>
+                </div>
             </div>
 
-            <!-- Item 4 -->
-            <div class="item">
-                <p>4. Wie reagieren Sie in stressigen Situationen?</p>
-                <label>
-                    <input type="radio" name="item4_best" value="D"> Dominant (am meisten zutreffend)
-                </label>
-                <label>
-                    <input type="radio" name="item4_worst" value="I"> Initiativ (am wenigsten zutreffend)
-                </label>
-                <label>
-                    <input type="radio" name="item4_best" value="S"> Stetig
-                </label>
-                <label>
-                    <input type="radio" name="item4_worst" value="G"> Gewissenhaft (am wenigsten zutreffend)
-                </label>
+            <div class="question">
+                <p>4. Was ist Ihnen bei der Arbeit am wichtigsten?</p>
+                <div class="options">
+                    <label><input type="checkbox" name="q4" value="D">Ergebnisse und schnelles Vorankommen.</label>
+                    <label><input type="checkbox" name="q4" value="S">Stabilität und ein angenehmes Arbeitsumfeld.</label>
+                    <label><input type="checkbox" name="q4" value="I">Abwechslung und ein kreatives Arbeitsklima.</label>
+                    <label><input type="checkbox" name="q4" value="G">Präzision und eine detaillierte Arbeitsweise.</label>
+                </div>
             </div>
 
-            <!-- Item 5 -->
-            <div class="item">
-                <p>5. Wie gehen Sie mit Details und Genauigkeit um?</p>
-                <label>
-                    <input type="radio" name="item5_best" value="D"> Dominant (am meisten zutreffend)
-                </label>
-                <label>
-                    <input type="radio" name="item5_worst" value="I"> Initiativ (am wenigsten zutreffend)
-                </label>
-                <label>
-                    <input type="radio" name="item5_best" value="S"> Stetig
-                </label>
-                <label>
-                    <input type="radio" name="item5_worst" value="G"> Gewissenhaft (am wenigsten zutreffend)
-                </label>
+            <div class="question">
+                <p>5. Wie gehen Sie mit Stress um?</p>
+                <div class="options">
+                    <label><input type="checkbox" name="q5" value="D">Ich nehme die Herausforderung an und versuche, die Kontrolle zu behalten.</label>
+                    <label><input type="checkbox" name="q5" value="S">Ich ziehe mich zurück und versuche, Ruhe zu finden.</label>
+                    <label><input type="checkbox" name="q5" value="I">Ich versuche, die Situation mit anderen zu besprechen und Lösungen zu finden.</label>
+                    <label><input type="checkbox" name="q5" value="G">Ich analysiere die Situation und suche nach einer logischen Lösung.</label>
+                </div>
             </div>
+            
 
-            <button type="submit">Ergebnisse anzeigen</button>
+            <button type="submit" class="submit-btn">Ergebnisse berechnen</button>
         </form>
+        <div id="result" class="result"></div>
     </div>
 
     <script src="script.js"></script>
