@@ -9,54 +9,59 @@
 <body>
     <div class="container">
         <h1>DISG Persönlichkeitsfragebogen</h1>
+        <p class="instruction">
+            Wählen Sie für jede Frage **eine Antwort, die am meisten** und **eine Antwort, die am wenigsten** zutrifft.
+            Sie müssen genau zwei Antworten pro Frage auswählen, um fortzufahren.
+        </p>
         <form id="disg-form">
+            
             <div class="question">
                 <p>1. Wie reagieren Sie, wenn Sie vor einer Herausforderung stehen?</p>
                 <div class="options">
-                    <label><input type="radio" name="q1" value="D_max">Ich übernehme die Führung und treffe schnell Entscheidungen.</label>
-                    <label><input type="radio" name="q1" value="S_min">Ich nehme mir Zeit und denke über die möglichen Risiken nach.</label>
-                    <label><input type="radio" name="q1" value="I_max">Ich versuche, mein Team zu motivieren und Ideen auszutauschen.</label>
-                    <label><input type="radio" name="q1" value="G_min">Ich analysiere die Situation detailliert und erarbeite einen genauen Plan.</label>
+                    <label><input type="checkbox" name="q1" value="D">Ich übernehme die Führung und treffe schnell Entscheidungen.</label>
+                    <label><input type="checkbox" name="q1" value="S">Ich nehme mir Zeit und denke über die möglichen Risiken nach.</label>
+                    <label><input type="checkbox" name="q1" value="I">Ich versuche, mein Team zu motivieren und Ideen auszutauschen.</label>
+                    <label><input type="checkbox" name="q1" value="G">Ich analysiere die Situation detailliert und erarbeite einen genauen Plan.</label>
                 </div>
             </div>
-            
+
             <div class="question">
                 <p>2. Wie gehen Sie mit Veränderungen in Ihrem Arbeitsumfeld um?</p>
                 <div class="options">
-                    <label><input type="radio" name="q2" value="I_max">Ich freue mich auf die neuen Möglichkeiten und Herausforderungen.</label>
-                    <label><input type="radio" name="q2" value="G_min">Ich bevorzuge es, wenn alles planbar und stabil bleibt.</label>
-                    <label><input type="radio" name="q2" value="D_max">Ich nehme Veränderungen direkt in Angriff und versuche, sie zu gestalten.</label>
-                    <label><input type="radio" name="q2" value="S_min">Ich brauche Zeit, um mich an die Veränderung anzupassen.</label>
+                    <label><input type="checkbox" name="q2" value="I">Ich freue mich auf die neuen Möglichkeiten und Herausforderungen.</label>
+                    <label><input type="checkbox" name="q2" value="G">Ich bevorzuge es, wenn alles planbar und stabil bleibt.</label>
+                    <label><input type="checkbox" name="q2" value="D">Ich nehme Veränderungen direkt in Angriff und versuche, sie zu gestalten.</label>
+                    <label><input type="checkbox" name="q2" value="S">Ich brauche Zeit, um mich an die Veränderung anzupassen.</label>
                 </div>
             </div>
 
             <div class="question">
                 <p>3. Wie würden Sie sich in einer Gruppe beschreiben?</p>
                 <div class="options">
-                    <label><input type="radio" name="q3" value="S_max">Ich bin ruhig und unterstütze andere gern.</label>
-                    <label><input type="radio" name="q3" value="I_min">Ich bin eher zurückhaltend und höre gerne zu.</label>
-                    <label><input type="radio" name="q3" value="D_min">Ich bin eher der Denker und hinterlasse die Führung anderen.</label>
-                    <label><input type="radio" name="q3" value="G_max">Ich bringe Struktur und Ordnung in die Gruppe.</label>
+                    <label><input type="checkbox" name="q3" value="S">Ich bin ruhig und unterstütze andere gern.</label>
+                    <label><input type="checkbox" name="q3" value="I">Ich bin eher zurückhaltend und höre gerne zu.</label>
+                    <label><input type="checkbox" name="q3" value="D">Ich bin eher der Denker und überlasse die Führung anderen.</label>
+                    <label><input type="checkbox" name="q3" value="G">Ich bringe Struktur und Ordnung in die Gruppe.</label>
                 </div>
             </div>
 
             <div class="question">
                 <p>4. Was ist Ihnen bei der Arbeit am wichtigsten?</p>
                 <div class="options">
-                    <label><input type="radio" name="q4" value="D_max">Ergebnisse und schnelles Vorankommen.</label>
-                    <label><input type="radio" name="q4" value="S_min">Stabilität und ein angenehmes Arbeitsumfeld.</label>
-                    <label><input type="radio" name="q4" value="I_max">Abwechslung und ein kreatives Arbeitsklima.</label>
-                    <label><input type="radio" name="q4" value="G_min">Präzision und eine detaillierte Arbeitsweise.</label>
+                    <label><input type="checkbox" name="q4" value="D">Ergebnisse und schnelles Vorankommen.</label>
+                    <label><input type="checkbox" name="q4" value="S">Stabilität und ein angenehmes Arbeitsumfeld.</label>
+                    <label><input type="checkbox" name="q4" value="I">Abwechslung und ein kreatives Arbeitsklima.</label>
+                    <label><input type="checkbox" name="q4" value="G">Präzision und eine detaillierte Arbeitsweise.</label>
                 </div>
             </div>
 
             <div class="question">
                 <p>5. Wie gehen Sie mit Stress um?</p>
                 <div class="options">
-                    <label><input type="radio" name="q5" value="D_max">Ich nehme die Herausforderung an und versuche, die Kontrolle zu behalten.</label>
-                    <label><input type="radio" name="q5" value="S_min">Ich ziehe mich zurück und versuche, Ruhe zu finden.</label>
-                    <label><input type="radio" name="q5" value="I_max">Ich versuche, die Situation mit anderen zu besprechen und Lösungen zu finden.</label>
-                    <label><input type="radio" name="q5" value="G_min">Ich analysiere die Situation und suche nach einer logischen Lösung.</label>
+                    <label><input type="checkbox" name="q5" value="D">Ich nehme die Herausforderung an und versuche, die Kontrolle zu behalten.</label>
+                    <label><input type="checkbox" name="q5" value="S">Ich ziehe mich zurück und versuche, Ruhe zu finden.</label>
+                    <label><input type="checkbox" name="q5" value="I">Ich versuche, die Situation mit anderen zu besprechen und Lösungen zu finden.</label>
+                    <label><input type="checkbox" name="q5" value="G">Ich analysiere die Situation und suche nach einer logischen Lösung.</label>
                 </div>
             </div>
 
@@ -68,3 +73,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
